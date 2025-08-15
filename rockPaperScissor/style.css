@@ -1,0 +1,110 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "Arial", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  background: linear-gradient(to top right, #33ccff 0%, #ff99cc 100%);
+    color: black;
+}
+.container{
+    max-width: 600px;
+    width: 100%;
+    padding: 2rem;
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 1rem;
+    box-shadow: 0 5px 15px  rgba(0,0,0,0.1);
+}
+.heading{
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #000;
+}
+.options{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+.optBtn{
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    padding: 1rem 1.5rem;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+.game{
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+.display{
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.result{
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+}
+.scores{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+.resetBtn{
+    display: block;
+    width: 100%;
+    background-color: #e53e3e;
+    color: #fff;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.resetBtn:hover{
+background-color: #980002;
+}
+.tie{
+ font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    background-color: lightblue;
+}
+.pWin{
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    background-color: lightgreen;
+}
+.cWin{
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    background-color: #e53e3e;
+}
