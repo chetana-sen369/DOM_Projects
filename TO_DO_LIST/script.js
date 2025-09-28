@@ -11,18 +11,25 @@ let filterArr = [];
 let tasks = [];
 let counter=document.getElementById('count');
 
+// Load tasks from localStorage on page load
+if (localStorage.getItem("tasks")) {
+  tasks = JSON.parse(localStorage.getItem("tasks"));
+}
+
 //counting the tasks 
 function updateCount() {
   const activeTasks = tasks.filter(task => !task.completed);
   let counts=0;
   counts = activeTasks.length;
   counter.textContent = counts;
+  // Save tasks to localStorage
+  localStorage.setItem("tasks", JSON.stringify(tasks));
 }
+
 addBtn.addEventListener("click", function () {
   const taskText = input.value;
   if(taskText!==""){
   addTask(taskText);
-  //console.log(tasks);
   applyFilter();
   }
 });
@@ -32,7 +39,6 @@ function addTask(userInput) {
     text: userInput,
     completed: false
   }
-  //console.log(newTask);
   tasks.push(newTask);
   updateCount();
 }
@@ -77,6 +83,7 @@ taskList.innerHTML="";
     });
   })
 }
+
 //gandle toggle for status update
 function handleToggle(id) {
   tasks = tasks.map((task) => {
@@ -89,6 +96,7 @@ function handleToggle(id) {
   applyFilter();
   updateCount();
 }
+
 document.addEventListener("DOMContentLoaded", () => {
   applyFilter();
 });
@@ -99,8 +107,6 @@ input.addEventListener("keypress", function (event) {
     const taskText = input.value;
     if(taskText!==""){
     addTask(taskText);
-    //console.log(tasks);
-    //taskList.innerHTML = "";
     applyFilter();
     }
   }
@@ -127,10 +133,10 @@ filter.forEach((button) => {
     applyFilter();
   })
 });
+
 //clear button
 clearBtn.addEventListener('click',()=>{
   tasks=tasks.filter(task=> !task.completed);
   applyFilter();
   updateCount();
 });
-
